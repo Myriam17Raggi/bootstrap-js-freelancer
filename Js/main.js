@@ -26,5 +26,16 @@ function calculateOffer(e){
             // offerta project analysis 
             finalPrice = 33.6 * hours;
     }
+ // Verifico e applicazione sconti
+ let DiscountCodePresent = false;
+ for(let i = 0; i < availableDiscountCodes.length; i++){
+     if(availableDiscountCodes[i] == discountCode){
+         DiscountCodePresent = true;
 
-   
+         // BONUS: Rimouvere il codice sconto una volta usato,
+         
+         availableDiscountCodes.splice(i, 1); 
+
+         break;
+     }
+ }
