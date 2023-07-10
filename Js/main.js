@@ -32,10 +32,28 @@ function calculateOffer(e){
      if(availableDiscountCodes[i] == discountCode){
          DiscountCodePresent = true;
 
-         // BONUS: Rimouvere il codice sconto una volta usato,
+         // rimuovere il codice sconto una volta usato,
          
          availableDiscountCodes.splice(i, 1); 
 
          break;
      }
  }
+
+ if((discountCode != "") && !DiscountCodePresent){
+    alert("Il codice sconto inserito non è valido");
+
+    // codice sconto errato di colore rosso
+    document.getElementById("discount-code").classList.add("text-danger");
+}
+
+if(DiscountCodePresent){
+    finalPrice = 0.75 * finalPrice;
+}
+
+finalPrice = finalPrice.toFixed(2);
+
+document.getElementById("price").innerHTML = "Il prezzo finale è di: " + finalPrice;
+}
+
+  
