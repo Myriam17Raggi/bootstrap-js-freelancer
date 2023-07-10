@@ -12,4 +12,19 @@ function calculateOffer(e){
 
     let finalPrice = 0;
     
+    // switch per le commissioni 
+    switch(optionTypeOffer){
+        case 1:
+            // offerta backend 
+            finalPrice = 20.5 * hours;
+            break;
+        case 2:
+            // offerta frontend 
+            finalPrice = 15.3 * hours;
+            break;
+        case 3:
+            // offerta project analysis 
+            finalPrice = 33.6 * hours;
+    }
+
    
